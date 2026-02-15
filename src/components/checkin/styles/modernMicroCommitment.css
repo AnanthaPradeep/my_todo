@@ -1,0 +1,245 @@
+.modern-micro-commitment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 2px solid var(--border-color);
+}
+
+.micro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+}
+
+.micro-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.micro-header p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.micro-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.micro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+.micro-status {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.micro-status-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Input Container */
+.micro-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.micro-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.micro-input:focus {
+  border-color: #1F9E9E;
+  box-shadow: 0 0 0 3px rgba(31, 158, 158, 0.1);
+}
+
+.micro-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.micro-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.micro-clear:hover {
+  background: var(--bg-secondary);
+  border-color: #999;
+}
+
+/* Examples Section */
+.micro-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--bg-primary);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.examples-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 8px;
+}
+
+.example-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.example-chip:hover {
+  border-color: #1F9E9E;
+  background: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(31, 158, 158, 0.2);
+  transform: translateY(-2px);
+}
+
+.example-chip:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-micro-commitment {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .micro-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .examples-grid {
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+  }
+
+  .example-chip {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .modern-micro-commitment {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .micro-header {
+    flex-direction: column;
+  }
+
+  .micro-header h3 {
+    font-size: 16px;
+  }
+
+  .micro-header p {
+    font-size: 12px;
+  }
+
+  .micro-display {
+    padding: 8px 12px;
+  }
+
+  .micro-input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .micro-clear {
+    width: 32px;
+    height: 32px;
+  }
+
+  .examples-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 6px;
+  }
+
+  .example-chip {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .examples-label {
+    font-size: 10px;
+  }
+}

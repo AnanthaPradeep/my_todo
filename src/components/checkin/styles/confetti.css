@@ -1,0 +1,23 @@
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetti-particle {
+  position: fixed;
+  top: -10px;
+  border-radius: 50%;
+  pointer-events: none;
+}

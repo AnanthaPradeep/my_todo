@@ -1,0 +1,238 @@
+.celebration-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.celebration-modal {
+  background: var(--bg-primary);
+  border-radius: 20px;
+  padding: var(--space-2xl);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.celebration-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.celebration-icon {
+  font-size: 48px;
+  animation: bounce 0.6s ease infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.celebration-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.celebration-subtitle {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.streak-badge {
+  background: linear-gradient(135deg, rgba(26, 174, 159, 0.1), rgba(50, 165, 255, 0.08));
+  border: 1px solid rgba(26, 174, 159, 0.25);
+  border-radius: 16px;
+  padding: var(--space-lg);
+  margin: var(--space-md) 0;
+}
+
+.streak-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.streak-icon {
+  font-size: 24px;
+  animation: pulse 0.8s ease infinite;
+}
+
+.streak-icon:nth-child(1) {
+  animation-delay: 0s;
+}
+.streak-icon:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.streak-icon:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.streak-icon:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.streak-icon:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.streak-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.streak-message {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.commitment-box {
+  background-color: var(--bg-secondary);
+  border: 2px solid rgba(26, 174, 159, 0.5);
+  border-radius: 12px;
+  padding: var(--space-md);
+}
+
+.commitment-label {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.commitment-text {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.commitment-note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.stats-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-md);
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-celebrate {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #1F9E9E 0%, #178C8C 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: var(--space-md);
+}
+
+.btn-celebrate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(31, 158, 158, 0.3);
+}
+
+.btn-celebrate:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .celebration-modal {
+    padding: var(--space-lg);
+  }
+
+  .celebration-title {
+    font-size: 24px;
+  }
+
+  .streak-display {
+    gap: 4px;
+  }
+
+  .streak-icon {
+    font-size: 20px;
+  }
+}

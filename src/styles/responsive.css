@@ -1,0 +1,283 @@
+/* ===================================
+   RESPONSIVE STYLES
+   =================================== */
+
+/* ===================================
+   MOBILE FIRST (< 640px - Small phones)
+   =================================== */
+
+@media (max-width: 639px) {
+  :root {
+    --space-lg: 16px;
+    --space-xl: 24px;
+    --header-height: 56px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    background: var(--sidebar-bg);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 12px 0 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .header {
+    padding: 0 var(--space-md);
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .header-subtitle {
+    display: none;
+  }
+
+  .content-wrapper {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .grid {
+    gap: var(--space-md);
+  }
+
+  .card {
+    padding: var(--space-md);
+  }
+
+  .grid-2-col {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+
+  .text-3xl {
+    font-size: 24px;
+  }
+
+  .text-2xl {
+    font-size: 20px;
+  }
+
+  .text-xl {
+    font-size: 18px;
+  }
+}
+
+/* ===================================
+   TABLET (640px - 1024px)
+   =================================== */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  :root {
+    --sidebar-width: 220px;
+    --max-content-width: 900px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 12px 0 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .grid-2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content-wrapper {
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
+
+/* ===================================
+   DESKTOP (>= 768px)
+   =================================== */
+
+@media (min-width: 768px) {
+  :root {
+    --sidebar-width: 220px;
+    --header-height: 64px;
+    --max-content-width: 1200px;
+  }
+
+  .layout {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    transform: none;
+    z-index: var(--z-sidebar);
+  }
+
+  .sidebar-backdrop {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .content {
+    flex: 1;
+    width: auto;
+  }
+
+  .grid-2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header-subtitle {
+    display: block;
+  }
+}
+
+/* ===================================
+   LARGE DESKTOP (>= 1400px)
+   =================================== */
+
+@media (min-width: 1400px) {
+  :root {
+    --max-content-width: 1400px;
+    --space-xl: 40px;
+    --space-2xl: 64px;
+  }
+
+  .content-wrapper {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .grid {
+    gap: var(--space-xl);
+  }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+  .sidebar,
+  .header,
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .layout {
+    min-height: auto;
+  }
+}
+
+/* ===================================
+   REDUCED MOTION
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .sidebar {
+    transition: none;
+  }
+
+  .sidebar-backdrop {
+    transition: none;
+  }
+
+  .sidebar-nav-item {
+    transition: none;
+  }
+
+  .card {
+    transition: none;
+  }
+}
+
+/* ===================================
+   HIGH CONTRAST MODE
+   =================================== */
+
+@media (prefers-contrast: more) {
+  .card {
+    border-width: 2px;
+  }
+
+  .sidebar-nav-item {
+    border: 1px solid transparent;
+  }
+
+  .sidebar-nav-item:hover {
+    border: 1px solid currentColor;
+  }
+
+  .sidebar-nav-item.active {
+    border: 1px solid white;
+  }
+}
+
+/* ===================================
+   LANDSCAPE ORIENTATION (MOBILE)
+   =================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  :root {
+    --header-height: 48px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .content-wrapper {
+    padding: var(--space-md);
+  }
+}

@@ -1,0 +1,74 @@
+.checkin-steps {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, rgba(31, 158, 158, 0.08), rgba(255, 217, 61, 0.08));
+  border-radius: 16px;
+  border: 1px solid rgba(31, 158, 158, 0.2);
+}
+
+.steps-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.step-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step.active .step-circle {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(31, 158, 158, 0.3);
+  transform: scale(1.1);
+}
+
+.step.completed .step-circle {
+  background: linear-gradient(135deg, var(--accent-color), #1F9E9E);
+  color: white;
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(79, 199, 188, 0.3);
+}
+
+.step-line {
+  width: 60px;
+  height: 3px;
+  background: var(--border-color);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.step.completed + .step .step-line {
+  background: linear-gradient(90deg, var(--accent-color), #1F9E9E);
+  box-shadow: 0 2px 6px rgba(79, 199, 188, 0.3);
+}
+
+.step-label {
+  margin-top: var(--space-md);
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+}

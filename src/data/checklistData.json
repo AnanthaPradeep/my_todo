@@ -1,0 +1,288 @@
+{
+  "categories": [
+    {
+      "id": "work",
+      "label": "Work",
+      "icon": "Briefcase",
+      "color": "#4ECDC4",
+      "description": "Work tasks, career growth, and professional development"
+    },
+    {
+      "id": "health",
+      "label": "Health",
+      "icon": "Heart",
+      "color": "#FF6B6B",
+      "description": "Physical fitness, mental wellness, and healthy habits"
+    },
+    {
+      "id": "finance",
+      "label": "Finance",
+      "icon": "DollarSign",
+      "color": "#22C55E",
+      "description": "Money management, budgeting, and financial planning"
+    },
+    {
+      "id": "learning",
+      "label": "Learning",
+      "icon": "Book",
+      "color": "#8B5CF6",
+      "description": "Education, skill development, and personal knowledge growth"
+    },
+    {
+      "id": "relationships",
+      "label": "Relationships",
+      "icon": "Users",
+      "color": "#F472B6",
+      "description": "Family, friends, and social connections"
+    },
+    {
+      "id": "personal-growth",
+      "label": "Personal Growth",
+      "icon": "Sprout",
+      "color": "#00D2D3",
+      "description": "Self-improvement, mindfulness, and life organization"
+    }
+  ],
+  "checklists": {
+    "daily": [
+      {
+        "category": "personal-growth",
+        "items": [
+          { "title": "Wake up before 6:30 AM", "order": 1 },
+          { "title": "No phone first 30 mins", "order": 2 },
+          { "title": "Make bed", "order": 3 },
+          { "title": "Quick room cleanup", "order": 4 },
+          { "title": "Plan top 3 tasks of the day", "order": 5 },
+          { "title": "No unnecessary scrolling", "order": 6 },
+          { "title": "Speak calmly", "order": 7 },
+          { "title": "Gratitude entry (1 thing)", "order": 8 },
+          { "title": "Journal 5 mins", "order": 9 },
+          { "title": "Plan tomorrow", "order": 10 },
+          { "title": "Clean workspace", "order": 11 },
+          { "title": "Sleep before 11:30 PM", "order": 12 }
+        ]
+      },
+      {
+        "category": "health",
+        "items": [
+          { "title": "Drink 500ml water (morning)", "order": 1 },
+          { "title": "10 min meditation / prayer", "order": 2 },
+          { "title": "Workout / walk 30 mins", "order": 3 },
+          { "title": "8000+ steps", "order": 4 },
+          { "title": "Eat protein", "order": 5 },
+          { "title": "Avoid junk food", "order": 6 },
+          { "title": "Drink 3L water", "order": 7 },
+          { "title": "Stretch before bed", "order": 8 }
+        ]
+      },
+      {
+        "category": "work",
+        "items": [
+          { "title": "Deep work 90 mins (no distraction)", "order": 1 },
+          { "title": "Improve communication (10 mins practice)", "order": 2 },
+          { "title": "Learn something new (15 mins)", "order": 3 },
+          { "title": "Complete priority task", "order": 4 },
+          { "title": "Review and respond to important emails", "order": 5 },
+          { "title": "Update task progress/status", "order": 6 }
+        ]
+      },
+      {
+        "category": "finance",
+        "items": [
+          { "title": "Track expenses", "order": 1 },
+          { "title": "Avoid impulse spending", "order": 2 },
+          { "title": "Review subscriptions", "order": 3 }
+        ]
+      },
+      {
+        "category": "learning",
+        "items": [
+          { "title": "Read 15 pages of a book", "order": 1 },
+          { "title": "Watch educational video (10 mins)", "order": 2 },
+          { "title": "Practice new skill (20 mins)", "order": 3 },
+          { "title": "Review notes/flashcards", "order": 4 },
+          { "title": "Listen to podcast/audiobook", "order": 5 },
+          { "title": "Write down one new thing learned", "order": 6 },
+          { "title": "Share knowledge with someone", "order": 7 },
+          { "title": "Ask one curious question", "order": 8 }
+        ]
+      },
+      {
+        "category": "relationships",
+        "items": [
+          { "title": "Message/call someone you care about", "order": 1 },
+          { "title": "Express appreciation to someone", "order": 2 },
+          { "title": "Active listening in conversation", "order": 3 },
+          { "title": "No phone during family time", "order": 4 },
+          { "title": "Smile and greet people", "order": 5 },
+          { "title": "Compliment someone genuinely", "order": 6 },
+          { "title": "Quality time with loved ones (30 mins)", "order": 7 }
+        ]
+      }
+    ],
+    "weekly": [
+      {
+        "category": "health",
+        "items": [
+          { "title": "4+ workout sessions", "order": 1 },
+          { "title": "Meal prep", "order": 2 },
+          { "title": "Weight check", "order": 3 },
+          { "title": "Hair grooming", "order": 4 }
+        ]
+      },
+      {
+        "category": "finance",
+        "items": [
+          { "title": "Weekly expense review", "order": 1 },
+          { "title": "Save fixed % of income", "order": 2 },
+          { "title": "EMI tracking", "order": 3 }
+        ]
+      },
+      {
+        "category": "work",
+        "items": [
+          { "title": "Update LinkedIn / portfolio", "order": 1 },
+          { "title": "Apply for opportunities (if needed)", "order": 2 },
+          { "title": "Skill practice (3 sessions)", "order": 3 },
+          { "title": "Team collaboration/meeting prep", "order": 4 },
+          { "title": "Review weekly goals progress", "order": 5 }
+        ]
+      },
+      {
+        "category": "learning",
+        "items": [
+          { "title": "Read 1 chapter of book", "order": 1 },
+          { "title": "Complete online course module", "order": 2 },
+          { "title": "Attend webinar/workshop", "order": 3 },
+          { "title": "Study session (2+ hours)", "order": 4 }
+        ]
+      },
+      {
+        "category": "personal-growth",
+        "items": [
+          { "title": "Digital detox half day", "order": 1 },
+          { "title": "Clean room completely", "order": 2 }
+        ]
+      },
+      {
+        "category": "relationships",
+        "items": [
+          { "title": "Spend quality time with family", "order": 1 },
+          { "title": "Social connection", "order": 2 },
+          { "title": "Video call with distant friend/family", "order": 3 },
+          { "title": "Plan activity with loved ones", "order": 4 }
+        ]
+      }
+    ],
+    "monthly": [
+      {
+        "category": "finance",
+        "items": [
+          { "title": "Transfer savings to investment", "order": 1 },
+          { "title": "SIP review", "order": 2 },
+          { "title": "Emergency fund check", "order": 3 },
+          { "title": "Net worth update", "order": 4 },
+          { "title": "Remove 1 unnecessary expense", "order": 5 }
+        ]
+      },
+      {
+        "category": "health",
+        "items": [
+          { "title": "Progress photos", "order": 1 },
+          { "title": "Body measurement", "order": 2 },
+          { "title": "Medical check (if required)", "order": 3 }
+        ]
+      },
+      {
+        "category": "work",
+        "items": [
+          { "title": "Skill milestone achieved", "order": 1 },
+          { "title": "Build 1 portfolio improvement", "order": 2 },
+          { "title": "Review career direction", "order": 3 },
+          { "title": "Ask for feedback at work", "order": 4 }
+        ]
+      },
+      {
+        "category": "relationships",
+        "items": [
+          { "title": "Relationship check-in", "order": 1 },
+          { "title": "Visit parents / elders", "order": 2 },
+          { "title": "Meet old friend for catch-up", "order": 3 },
+          { "title": "Send thoughtful gift/message", "order": 4 }
+        ]
+      },
+      {
+        "category": "personal-growth",
+        "items": [
+          { "title": "Declutter wardrobe", "order": 1 },
+          { "title": "Plan next month goals", "order": 2 }
+        ]
+      },
+      {
+        "category": "learning",
+        "items": [
+          { "title": "Book finished", "order": 1 },
+          { "title": "Complete course/certification module", "order": 2 },
+          { "title": "Create learning project/assignment", "order": 3 }
+        ]
+      }
+    ],
+    "yearly": [
+      {
+        "category": "finance",
+        "items": [
+          { "title": "Tax planning", "order": 1 },
+          { "title": "Insurance review", "order": 2 },
+          { "title": "Big investment decision", "order": 3 },
+          { "title": "Income growth target set", "order": 4 }
+        ]
+      },
+      {
+        "category": "work",
+        "items": [
+          { "title": "Certification completed", "order": 1 },
+          { "title": "Salary negotiation", "order": 2 },
+          { "title": "Personal branding update", "order": 3 },
+          { "title": "New side income stream", "order": 4 }
+        ]
+      },
+      {
+        "category": "health",
+        "items": [
+          { "title": "Full body checkup", "order": 1 },
+          { "title": "Fitness transformation goal", "order": 2 },
+          { "title": "Break one bad habit", "order": 3 }
+        ]
+      },
+      {
+        "category": "personal-growth",
+        "items": [
+          { "title": "Travel somewhere new", "order": 1 },
+          { "title": "Donate to charity", "order": 2 },
+          { "title": "Review life direction", "order": 3 },
+          { "title": "Set next year vision", "order": 4 }
+        ]
+      },
+      {
+        "category": "learning",
+        "items": [
+          { "title": "Complete major certification/course", "order": 1 },
+          { "title": "Master one new skill", "order": 2 },
+          { "title": "Read 12+ books goal achieved", "order": 3 },
+          { "title": "Attend major conference/bootcamp", "order": 4 },
+          { "title": "Build portfolio project with new skill", "order": 5 }
+        ]
+      },
+      {
+        "category": "relationships",
+        "items": [
+          { "title": "Attend family reunion/gathering", "order": 1 },
+          { "title": "Plan vacation with loved ones", "order": 2 },
+          { "title": "Reconnect with old friends", "order": 3 },
+          { "title": "Strengthen key relationships", "order": 4 },
+          { "title": "Create memorable experiences together", "order": 5 }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+.stress-level-slider {
+  padding: var(--space-lg);
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.slider-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.range-input {
+  width: 100%;
+}
+
+.stress-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,668 @@
+/* ===================================
+   LAYOUT SYSTEM - CSS VARIABLES
+   =================================== */
+
+:root {
+  /* Spacing System */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Layout Dimensions */
+  --sidebar-width: 220px;
+  --header-height: 64px;
+  --max-content-width: 1200px;
+
+  /* Colors */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --border-color: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+
+  /* Accent Color (Dynamic - set by settings) */
+  --accent-color: #3B82F6;
+  --accent-color-rgb: 59, 130, 246;
+  --accent-color-hover: #2563eb;
+
+  /* Sidebar Theme - Light Mode */
+  --sidebar-bg: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --sidebar-text: #1e293b;
+  --sidebar-text-muted: #64748b;
+  --sidebar-text-weak: #475569;
+  --sidebar-item-hover: rgba(0, 0, 0, 0.03);
+  --sidebar-item-active: rgba(59, 130, 246, 0.08);
+
+  /* Border Hover Color */
+  --border-color-hover: #cbd5e1;
+
+  /* Font Size (Dynamic - set by settings) */
+  --font-size-base: 14px;
+
+  /* Transitions (Dynamic - set by settings) */
+  --transition-duration: 0.2s;
+
+  /* Dark Mode */
+  --bg-primary-dark: #0f172a;
+  --bg-secondary-dark: #1e293b;
+  --bg-tertiary-dark: #334155;
+  --border-color-dark: #334155;
+  --text-primary-dark: #f1f5f9;
+  --text-secondary-dark: #cbd5e1;
+
+  /* Z-index */
+  --z-sidebar: 40;
+  --z-overlay: 30;
+  --z-header: 20;
+  --z-modal: 200;
+  --z-default: 1;
+}
+
+:root.dark {
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --bg-tertiary: var(--bg-tertiary-dark);
+  --border-color: var(--border-color-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --border-color-hover: #64748b;
+
+  /* Sidebar Theme - Dark Mode */
+  --sidebar-bg: linear-gradient(180deg, #0f172a 0%, #0b1323 100%);
+  --sidebar-text: rgba(255, 255, 255, 0.88);
+  --sidebar-text-muted: rgba(255, 255, 255, 0.6);
+  --sidebar-text-weak: rgba(255, 255, 255, 0.75);
+  --sidebar-item-hover: rgba(255, 255, 255, 0.05);
+  --sidebar-item-active: rgba(59, 130, 246, 0.08);
+}
+
+/* ===================================
+   GLOBAL STYLES
+   =================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===================================
+   ROOT CONTAINER
+   =================================== */
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow: visible;
+}
+
+/* ===================================
+   APP CONTAINER (Main Layout)
+   =================================== */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+/* ===================================
+   SIDEBAR STYLES
+   =================================== */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: var(--z-sidebar);
+  transition: box-shadow 0.3s ease;
+}
+
+.sidebar.open {
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--z-sidebar) - 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-backdrop.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-logo {
+  display: none;
+}
+
+.sidebar-logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-logo-text h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.sidebar-logo-text p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 2px 0 0 0;
+}
+
+.sidebar-nav {
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-md);
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--bg-tertiary);
+  color: #0ea5e9;
+}
+
+.sidebar-nav-item.active {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.sidebar-nav-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar-footer {
+  border-top: 1px solid var(--border-color);
+  padding: var(--space-md);
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ===================================
+   MAIN AREA (Content Container)
+   =================================== */
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ===================================
+   HEADER STYLES
+   =================================== */
+
+.header {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+  z-index: var(--z-header);
+  gap: var(--space-lg);
+  flex-shrink: 0;
+}
+
+.header-menu-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  border-radius: 6px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.header-menu-button:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.header-menu-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 4px 0 0 0;
+}
+
+.header-action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ===================================
+   MAIN CONTENT AREA
+   =================================== */
+
+.main-body {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+.content-footer > footer {
+  width: 100%;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: var(--max-content-width);
+  padding: var(--space-xl) var(--space-lg);
+  margin: 0 auto;
+  padding-bottom: var(--space-2xl);
+}
+
+/* ===================================
+   SCROLLBAR STYLING (Main Content)
+   =================================== */
+
+.main-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-body::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.main-body::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ===================================
+   MOBILE MENU BUTTON
+   =================================== */
+
+.mobile-menu-button {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  border-radius: 6px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobile-menu-button:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.mobile-menu-button:active {
+  transform: scale(0.95);
+}
+
+.mobile-menu-button svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* ===================================
+   GRID SYSTEM
+   =================================== */
+
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+.grid-1-col {
+  grid-template-columns: 1fr;
+}
+
+.grid-2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ===================================
+   CARD STYLES
+   =================================== */
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #0ea5e9;
+}
+
+/* ===================================
+   FLEX UTILITY CLASSES
+   =================================== */
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.gap-sm {
+  gap: var(--space-sm);
+}
+
+.gap-md {
+  gap: var(--space-md);
+}
+
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+/* ===================================
+   SPACING UTILITIES
+   =================================== */
+
+.p-md {
+  padding: var(--space-md);
+}
+
+.p-lg {
+  padding: var(--space-lg);
+}
+
+.p-xl {
+  padding: var(--space-xl);
+}
+
+.px-md {
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.px-lg {
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.py-md {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.py-lg {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.mt-md {
+  margin-top: var(--space-md);
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+
+/* ===================================
+   TEXT UTILITIES
+   =================================== */
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+.text-2xl {
+  font-size: 24px;
+}
+
+.text-3xl {
+  font-size: 30px;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* ===================================
+   VISIBILITY UTILITIES
+   =================================== */
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* ===================================
+   NO SIDEBAR ON MOBILE
+   =================================== */
+
+@media (max-width: 767px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .content-wrapper {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+/* ===================================
+   SIDEBAR VISIBLE ON DESKTOP
+   =================================== */
+
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+  }
+
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .header {
+    padding: 0 var(--space-lg);
+  }
+
+  .grid-2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-wrapper {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+}

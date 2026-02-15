@@ -1,0 +1,93 @@
+/* Activity Tags Component Styles */
+
+.activity-tags {
+  margin-bottom: var(--space-lg);
+}
+
+.activity-tags-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.activity-tags-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.activity-tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-sm);
+}
+
+.activity-tag {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  min-height: 44px;
+}
+
+.activity-tag-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--bg-primary);
+  margin-right: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.activity-tag:hover {
+  border-color: var(--activity-color, var(--accent-color));
+  background: var(--bg-tertiary);
+  transform: translateY(-1px);
+}
+
+.activity-tag.selected {
+  border-color: var(--activity-color, var(--accent-color));
+  background: var(--activity-color);
+  color: white;
+  box-shadow: 0 2px 8px rgba(var(--accent-color-rgb), 0.2);
+}
+
+.activity-tag.selected .activity-tag-icon {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.activity-tag-label {
+  flex: 1;
+  text-align: left;
+}
+
+.activity-tag-check {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: var(--space-xs);
+}
+
+@media (max-width: 640px) {
+  .activity-tags-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .activity-tag {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 13px;
+    min-height: 40px;
+  }
+}

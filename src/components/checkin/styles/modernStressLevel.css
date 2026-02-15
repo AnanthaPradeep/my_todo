@@ -1,0 +1,291 @@
+.modern-stress-level {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 2px solid var(--border-color);
+}
+
+.stress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+}
+
+.stress-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.stress-header p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.stress-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  min-width: 120px;
+  text-align: center;
+}
+
+.stress-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.stress-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stress-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stress-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Gauge Styling */
+.stress-gauge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.gauge-outer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 8px;
+  background: var(--bg-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.gauge-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.gauge-center {
+  width: 120px;
+  height: 120px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-color);
+}
+
+.gauge-value {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4FC7BC 0%, #FF6B6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Slider Container */
+.stress-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.stress-track {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: var(--bg-primary);
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid var(--border-color);
+}
+
+.stress-fill {
+  height: 100%;
+  border-radius: 3px 0 0 3px;
+  transition: width 0.2s ease;
+}
+
+.stress-input {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+  outline: none;
+}
+
+.stress-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1F9E9E 0%, #FF6B6B 100%);
+  cursor: pointer;
+  border: 2px solid var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(31, 158, 158, 0.3);
+  transition: all 0.2s ease;
+}
+
+.stress-input::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(31, 158, 158, 0.5);
+}
+
+.stress-input::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1F9E9E 0%, #FF6B6B 100%);
+  cursor: pointer;
+  border: 2px solid var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(31, 158, 158, 0.3);
+  transition: all 0.2s ease;
+}
+
+.stress-input::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(31, 158, 158, 0.5);
+}
+
+/* Labels */
+.stress-labels {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-stress-level {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .stress-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stress-display {
+    width: 100%;
+    flex-direction: row;
+    gap: 12px;
+    min-width: unset;
+  }
+
+  .gauge-outer {
+    width: 130px;
+    height: 130px;
+  }
+
+  .gauge-center {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gauge-value {
+    font-size: 28px;
+  }
+
+  .stress-input::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stress-input::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .modern-stress-level {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .stress-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stress-header h3 {
+    font-size: 16px;
+  }
+
+  .stress-header p {
+    font-size: 12px;
+  }
+
+  .stress-gauge {
+    min-height: 160px;
+  }
+
+  .gauge-outer {
+    width: 110px;
+    height: 110px;
+  }
+
+  .gauge-center {
+    width: 85px;
+    height: 85px;
+  }
+
+  .gauge-value {
+    font-size: 22px;
+  }
+
+  .stress-display {
+    padding: 10px 12px;
+  }
+
+  .stress-value {
+    font-size: 18px;
+  }
+
+  .stress-labels {
+    font-size: 10px;
+    gap: 4px;
+  }
+}

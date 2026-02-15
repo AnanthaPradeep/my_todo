@@ -1,0 +1,483 @@
+/* ============================================
+   APP HEADER - PROPER FLEX LAYOUT
+   ============================================ */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+:root.dark .app-header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   MAIN CONTAINER - FLEX LAYOUT
+   ============================================ */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 16px;
+  gap: 16px;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* ============================================
+   LEFT SECTION - LOGO & BRAND
+   ============================================ */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.header-logo svg {
+  color: var(--accent-color);
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.header-logo-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header-brand {
+  font-variant: JIS78;
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+/* ============================================
+   CENTER SECTION - SEARCH
+   ============================================ */
+
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 460px;
+  width: 100%;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 44px;
+  padding: 0 8px 0 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+:root.dark .header-search {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.header-search:focus-within {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+:root.dark .header-search:focus-within {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-search-input {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  flex: 1;
+  font-family: inherit;
+  line-height: 44px;
+  min-width: 0;
+  padding: 0;
+}
+
+:root.dark .header-search-input {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.header-search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+:root.dark .header-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.header-search-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 1px 1px 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 1px solid var(--border-color);
+  border-radius: 999px;
+}
+
+.header-search-mic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+:root.dark .header-search-mic {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header-search-mic:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+}
+
+:root.dark .header-search-mic:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.header-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
+}
+
+.header-search-button:hover {
+  background: var(--accent-color-hover);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.45);
+  transform: scale(1.05);
+}
+
+.header-search-button:active {
+  transform: scale(0.98);
+}
+
+/* Search Results Dropdown */
+.header-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 1001;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+
+:root.dark .header-search-results {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.15s ease;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.search-result-item:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+:root.dark .search-result-item:hover {
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.search-result-item svg {
+  color: var(--accent-color);
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+/* ============================================
+   RIGHT SECTION - ACTIONS
+   ============================================ */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+.header-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+:root.dark .header-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+:root.dark .header-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.header-button svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Add Button - Accent Style */
+.header-add-button {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.header-add-button:hover {
+  background: var(--accent-color-hover);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transform: translateY(-1px);
+}
+
+.header-add-button:active {
+  transform: scale(0.98) translateY(0);
+}
+
+/* Theme Button */
+.header-theme-button {
+  padding: 0 10px;
+}
+
+.header-theme-button svg {
+  transition: transform 0.2s ease;
+}
+
+.header-button:hover svg {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .header-center {
+    max-width: 380px;
+  }
+
+  .header-search {
+    height: 44px;
+    padding: 0 14px;
+  }
+
+  .header-search-input {
+    line-height: 44px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .header-center {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .header-brand {
+    display: none;
+  }
+
+  .header-logo {
+    padding: 4px 6px;
+    gap: 6px;
+  }
+
+  .header-logo svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header-button {
+    height: 40px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .header-button span {
+    display: none;
+  }
+
+  .header-add-button {
+    padding: 0 10px;
+  }
+
+  .header-add-button span {
+    display: inline;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    padding: 0 8px;
+    gap: 6px;
+  }
+
+  .header-logo {
+    padding: 2px 4px;
+    gap: 4px;
+  }
+
+  .header-logo svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .header-button {
+    height: 36px;
+    padding: 0 6px;
+  }
+
+  .header-add-button {
+    padding: 0 8px;
+  }
+
+  .header-search {
+    height: 40px;
+    padding: 0 12px;
+    gap: 6px;
+  }
+
+  .header-search-input {
+    line-height: 40px;
+    font-size: 13px;
+  }
+
+  .header-search-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-search-mic {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-container {
+    padding: 0 8px;
+    gap: 6px;
+  }
+
+  .header-button {
+    padding: 0 6px;
+  }
+
+  .header-search {
+    height: 40px;
+    padding: 0 10px;
+    gap: 4px;
+  }
+
+  .header-search-button {
+    width: 34px;
+    height: 34px;
+  }
+}

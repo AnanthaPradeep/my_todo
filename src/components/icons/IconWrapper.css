@@ -1,0 +1,87 @@
+/* ===================================
+   ICON WRAPPER STYLES
+   =================================== */
+
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  stroke-width: 2;
+  transition: all 0.2s ease;
+}
+
+.icon:hover {
+  transform: translateY(-1px);
+}
+
+.icon.icon-primary {
+  color: var(--text-primary);
+}
+
+.icon.icon-secondary {
+  color: var(--text-secondary);
+}
+
+.icon.icon-success {
+  color: #22c55e;
+}
+
+.icon.icon-warning {
+  color: #f59e0b;
+}
+
+.icon.icon-danger {
+  color: #ef4444;
+}
+
+.icon.icon-info {
+  color: #0ea5e9;
+}
+
+.icon.interactive {
+  cursor: pointer;
+}
+
+.icon-wrapper.interactive {
+  cursor: pointer;
+}
+
+.icon-wrapper.interactive:hover {
+  opacity: 0.8;
+}
+
+.icon-wrapper.interactive:active {
+  transform: scale(0.95);
+}
+
+/* Mood Icons */
+.mood-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mood-icon.selectable {
+  cursor: pointer;
+}
+
+.mood-icon.selectable:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .icon {
+    transition: all 0.15s ease;
+  }
+
+  .icon.interactive:hover {
+    transform: scale(1.05);
+  }
+}
